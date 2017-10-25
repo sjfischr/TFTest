@@ -29,7 +29,9 @@ result = sess.run(tf_product)
 #get end timestamp
 ts_b = datetime.datetime.now()
 
+delta = ts_b - ts_a
 
+print ("Total Runtime Duration was " + repr(int(delta.total_seconds() * 1000)) + " milliseconds.")
 
 # Now let's have a look at the result.
 print (result)
