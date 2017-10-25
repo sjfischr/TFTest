@@ -8,8 +8,8 @@ import tensorflow as tf
 
 def calcArray():
     # Pair of numpy arrays.
-    matrix1 = 10 * np.random.random_sample((3, 4))
-    matrix2 = 10 * np.random.random_sample((4, 6))
+    matrix1 = 10 * np.random.random_sample((3000, 4000))
+    matrix2 = 10 * np.random.random_sample((4000, 6000))
 
     # Create a pair of constant ops, add the numpy
     # array matrices.
