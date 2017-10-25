@@ -1,17 +1,17 @@
-# Tensorflow/Machine Learning testing
-The goal of this exercise is to use Python and some Machine Learning libraries (such as SKLearn and Google's Tensorflow) to assess performance of CPU versus GPU for certain test iterations.
+# TensorFlow/Machine Learning testing
+The goal of this exercise is to use Python and some Machine Learning libraries (such as SKLearn and Google's TensorFlow) to assess performance of CPU versus GPU for certain test iterations.
 Ultimately, this will serve as a helpful primer in the realm of Machine Learning, such that we can determine advantages or disadvantages to solution architectures, certain types of hardware, or ML libraries.
 
 ## Baseline Test: Array Calculation
-The reason we are performing a baseline array calculation is to look at how well Tensorflow performs a matrix multiplication.
+The reason we are performing a baseline array calculation is to look at how well TensorFlow performs a matrix multiplication.
 Usung numpy, we used the same matrix sizes and a random number generator for both the CPU-enabled and GPU-enabled TF engines.
-With Tensorflow, the GPU-enabled engine is used by default for all tasks, unless you were to manually turn it off in the configuration file, environment variables, or thye code itself.
+With TensorFlow, the GPU-enabled engine is used by default for all tasks, unless you were to manually turn it off in the configuration file, environment variables, or thye code itself.
 In order to call all items in the same program, we used a command to *only* use the CPU:
 ```
 with tf.device("/cpu:0"):
 ```
 For smaller matrices, the CPU-enabled Tensorflow engine (using dual Xeon E5-2670s) was the clear winner. 
-However, Tensorflow's GPU began to catch up to the CPU as the matrices grew in size.
+However, TensorFlow's GPU began to catch up to the CPU as the matrices grew in size.
 *Note:* We could not go further in this experiment as we ran out of memory on the CPU, and TensorFlow does not permit sending it any Tensors larger than 2GB. 
 
 |Matrix 1 A |	Matrix 1 B |	Size |	Matrix 2 A |	Matrix 2 B |	Size |	CPU Solution (ms)	| GPU Solution (ms) |
