@@ -11,7 +11,8 @@ In order to call all items in the same program, we used a command to *only* use 
 with tf.device("/cpu:0"):
 ```
 For smaller matrices, the CPU-enabled Tensorflow engine (using dual Xeon E5-2670s) was the clear winner. 
-However, Tensorflow's GPU 
+However, Tensorflow's GPU began to catch up to the CPU as the matrices grew in size.
+*Note:* We could not go further in this experiment as we ran out of memory on the CPU, and TensorFlow does not permit sending it any Tensors larger than 2GB. 
 
 |Matrix 1 A |	Matrix 1 B |	Size |	Matrix 2 A |	Matrix 2 B |	Size |	CPU Solution (ms)	| GPU Solution (ms) |
 | --- | --- | --- | --- | --- | --- | --- | --- | 
